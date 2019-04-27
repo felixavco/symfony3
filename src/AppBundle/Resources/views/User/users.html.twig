@@ -1,0 +1,66 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+{% block content %}
+    <div class="container">
+        <div class="col-lg-12 box-personas">
+            <h2>Personas</h2>
+            <div class="count">
+                <span class="label label-primary">
+                    Total de Personas {{ pagination.getTotalItemCount }}
+                </span>
+            </div>
+            <hr/>
+
+            <div class="box-content box-users">
+                {% for user in pagination %}
+                    <div class="col-lg-12 user-item">
+                        <div class="avatar">
+                            {% if user.image == null %}
+                                <img src="{{asset('assets/images/default.png')}}">
+                            {% else %}
+                                <img src="{{asset(user.image)}}">
+                            {% endif %}
+                        </div>
+                        <div class="user-item-content">
+                            <h4><strong>{{ user.name }} {{ user.lastname}}</strong> - {{ user.nick }}<h4>
+                            <p>{{ user.bio }}</p> 
+                        </div>
+                        
+                        {% if app.user.id != user.id %}
+                            <div class="pull-right buttons-following">
+                                <button class="btn btn-sm btn-success btn-follow 
+                                     {#   {% if app.user|following(user) == true %}
+                                            hidden
+                                        {% endif %}#}
+                                        " data-followed="{{user.id}}"
+                                        data-toggle="tooltip" data-placement="top" title="Follow">
+                                    <i class="far fa-heart"></i>&nbsp Follow
+                                </button>
+                                    
+                                <button class="btn btn-sm btn-default btn-unfollow
+                        {#                {%if app.user|following(user) == false %}
+                                            hidden
+                                        {% endif %}   #}                        
+                                        " data-followed="{{user.id}}" 
+                                        data-toggle="tooltip" data-placement="top" title="Unfollow">
+                                    <i class="fas fa-heart"></i>&nbsp Unfollow
+                                </button>
+                            </div>
+                        {% endif %}
+                        
+                        <div class="clearfix"></div>
+                        <hr/>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="navigation">
+                {{ knp_pagination_render (pagination) }}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+        {{ parent() }}
+        <script src="{{ asset('assets/js/custom/users.js') }}"></script>
+{% endblock %}

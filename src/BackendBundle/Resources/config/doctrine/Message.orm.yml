@@ -1,0 +1,70 @@
+BackendBundle\Entity\Message:
+    type: entity
+    table: messages
+    indexes:
+        fk_messages_sender:
+            columns:
+                - sender
+        fk_messages_recipient:
+            columns:
+                - recipient
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        message:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        file:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        image:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        readed:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+    manyToOne:
+        recipient:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                recipient:
+                    referencedColumnName: id
+            orphanRemoval: false
+        sender:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                sender:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

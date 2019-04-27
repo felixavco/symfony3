@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/Social_network/src/AppBundle/Controller/FollowingController.php</file>
+            <file>file:/C:/xampp/htdocs/Social_network/src/AppBundle/Resources/views/User/users.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Social_network/app/config/services.yml</file>
+            <file>file:/C:/xampp/htdocs/Social_network/src/AppBundle/Twig/FollowingExtension.php</file>
+            <file>file:/C:/xampp/htdocs/Social_network/src/AppBundle/Resources/config/routing/following.yml</file>
+            <file>file:/C:/xampp/htdocs/Social_network/web/assets/js/scripts.js</file>
+            <file>file:/C:/xampp/htdocs/Social_network/src/BackendBundle/Entity/Following.php</file>
+            <file>file:/C:/xampp/htdocs/Social_network/web/assets/js/custom/users.js</file>
+        </group>
+    </open-files>
+</project-private>

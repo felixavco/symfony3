@@ -1,0 +1,101 @@
+﻿//esto es un comentario, esto no se ejecuta
+
+
+//Se asigna el pin a cada variable
+
+
+        //Pines del LED 1 
+        int led11 = 3;
+        int led12 = 5;
+        int led13 = 6;
+
+
+        //Pines del LED2
+        int led21 = 9; 
+        int led22 = 10;  
+        int led23 = 11;   
+
+
+        //Pines del LED3
+        int led31 = 2; 
+        int led32 = 4;  
+        int led33 = 7;  
+     
+        int pausa = 200;
+     
+         void setup(){ 
+           
+      //En esta parte se configura como se comportara cada pin, con la funcion pinMode(); en este caso todas seran salidas 'OUTPUT'
+
+
+           pinMode(led11, OUTPUT);    
+           pinMode(led12, OUTPUT);    
+           pinMode(led13, OUTPUT);    
+
+
+           pinMode(led21, OUTPUT);    
+           pinMode(led22, OUTPUT);    
+           pinMode(led23, OUTPUT); 
+
+
+           pinMode(led31, OUTPUT);    
+           pinMode(led32, OUTPUT);    
+           pinMode(led33, OUTPUT); 
+   }
+     
+         void loop(){ 
+           
+          //Se ejecuta la funcion colores para generar los colores
+          
+           //  colores basicos:
+           color(255, 0, 0);   // rojo
+           delay(pausa);       // delay por pausa
+           color(0,255, 0);    // verde
+           delay(pausa);       // delay por pausa
+           color(0, 0, 255);   // azul
+           delay(pausa);       // delay por pausa
+        
+           // colores mezclados:
+           color(255,255,255); // blanco
+           delay(pausa);       // delay por pausa
+           color(255,255,0);   // amarillo
+           delay(pausa);       // delay por pausa
+           color(255,0,255);   // magenta
+           delay(pausa);       // delay por pausa
+           color(0,255,255);   // cian
+           delay(pausa);       // delay por pausa
+           color(0,0,0);       // apagado
+
+
+                // vuelta atras
+
+
+           color(255,0,255);   // magenta
+           delay(pausa);       // delay por pausa
+           color(255,255,0);   // amarillo
+           delay(pausa);       // delay por pausa
+           color(255,255,255); // blanco
+           delay(pausa);       // delay por pausa
+           color(0, 0, 255);   // azul
+           delay(pausa);       // delay por pausa
+           color(0,255, 0);    // verde
+           delay(pausa);       // delay por pausa
+           
+   }  
+         
+         // funcion para generar colores
+         void color (int rojo, int verde, int azul) {    
+           analogWrite(led11, rojo); 
+           analogWrite(led12, verde);
+           analogWrite(led13, azul);
+
+
+           analogWrite(led21, rojo); 
+           analogWrite(led22, verde);
+           analogWrite(led23, azul);
+
+
+           digitalWrite(led31, rojo); 
+           digitalWrite(led32, verde);
+           digitalWrite(led33, azul);
+   }
